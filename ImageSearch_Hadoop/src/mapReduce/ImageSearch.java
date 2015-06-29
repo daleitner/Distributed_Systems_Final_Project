@@ -8,6 +8,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 /**
+ * Example from Hadoop book. Serves as base for our own program.
  * 
  * @author julian TODO Adjust parameters and other things to our needs.
  */

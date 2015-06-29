@@ -8,6 +8,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 /**
+ * Example from Hadoop book. Serves as base for our own program.
  * 
  * @author julian
  *
