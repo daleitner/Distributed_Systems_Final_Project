@@ -2,7 +2,7 @@ package mapReduce;
 
 
 /**
- * TODO Re-organise setup so these imports work.
+ * TODO Check if re-organisation was successful.
  */
 import org.apache.hadoop.*;
 import org.apache.hadoop.fs.Path;
