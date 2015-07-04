@@ -1,4 +1,4 @@
-package mapReduce;
+package featureExtract;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import org.apache.hadoop.mapreduce.Reducer;
  * @author julian
  *
  */
-public class ImageSearchReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+public class FeatureExtractReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 	@Override
 	public void reduce(Text key, Iterable<IntWritable> values, Context context)
 			throws IOException, InterruptedException {
