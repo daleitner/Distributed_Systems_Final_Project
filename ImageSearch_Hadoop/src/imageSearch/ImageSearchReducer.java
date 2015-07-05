@@ -6,12 +6,7 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-/**
- * Example from Hadoop book. Serves as base for our own program.
- * 
- * @author julian
- *
- */
+
 public class ImageSearchReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 	@Override
 	public void reduce(Text key, Iterable<IntWritable> values, Context context)

@@ -20,11 +20,6 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import net.semanticmetadata.lire.imageanalysis.CEDD;
 
-/**
- * Example from Hadoop book. Serves as base for our own program.
- * 
- * @author julian TODO Adjust parameters and other things to our needs.
- */
 public class FeatureExtract {
 
 	

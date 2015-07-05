@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hadoop"/>
+	<classpathentry kind="lib" path="LiRe/lire.jar"/>
 	<classpathentry kind="lib" path="HadoopCustomLibrary/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="HadoopCustomLibrary/annotations-api.jar"/>
 	<classpathentry kind="lib" path="HadoopCustomLibrary/aopalliance-1.0.jar"/>
@@ -209,6 +209,5 @@
 	<classpathentry kind="lib" path="HadoopCustomLibrary/xz-1.0.jar"/>
 	<classpathentry kind="lib" path="HadoopCustomLibrary/zookeeper-3.4.6-tests.jar"/>
 	<classpathentry kind="lib" path="HadoopCustomLibrary/zookeeper-3.4.6.jar"/>
-	<classpathentry kind="lib" path="LiRe/lire.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

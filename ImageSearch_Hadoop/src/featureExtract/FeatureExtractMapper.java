@@ -10,12 +10,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import net.semanticmetadata.lire.imageanalysis.CEDD;
 
-/**
- * Example from Hadoop book. Serves as base for our own program.
- * 
- * @author julian
- *
- */
+
 public class FeatureExtractMapper extends Mapper<LongWritable, BufferedImage, Text, IntWritable> {
 
 	private static final int MISSING = 9999;

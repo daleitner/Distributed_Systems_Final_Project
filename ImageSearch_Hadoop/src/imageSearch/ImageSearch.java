@@ -17,11 +17,6 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import featureExtract.FeatureExtract;
 
-/**
- * Example from Hadoop book. Serves as base for our own program.
- * 
- * @author julian TODO Adjust parameters and other things to our needs.
- */
 public class ImageSearch {
 
 	public static void main(String[] args) throws Exception {

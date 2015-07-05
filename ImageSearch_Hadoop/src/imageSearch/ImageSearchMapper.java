@@ -10,12 +10,7 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-/**
- * Example from Hadoop book. Serves as base for our own program.
- * 
- * @author julian
- *
- */
+
 public class ImageSearchMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
 	private static final int MISSING = 9999;
