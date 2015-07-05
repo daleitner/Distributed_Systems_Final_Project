@@ -9,6 +9,7 @@ import java.util.Set;
 import javax.imageio.ImageIO;
 
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -67,8 +68,11 @@ public class ImageSearch {
 		job.setReducerClass(ImageSearchReducer.class);
 		
 		// TODO Those two have yet to be adjusted for our needs
+		job.setMapOutputKeyClass(Text.class);
+		job.setMapOutputValueClass(Text.class);
+		
 		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(IntWritable.class);
+		job.setOutputValueClass(DoubleWritable.class);
 
 		System.exit(job.waitForCompletion(true) ? 0 : 1);
 	}

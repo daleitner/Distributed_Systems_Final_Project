@@ -11,7 +11,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 
-public class ImageSearchMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class ImageSearchMapper extends Mapper<LongWritable, Text, Text, Text> {
 
 	private static final int MISSING = 9999;
 	private static final String PATH = "/home/daniel/Distributed_Systems_Final_Project/ImageSearch_Hadoop/input/wantedImage.txt";
@@ -23,7 +23,7 @@ public class ImageSearchMapper extends Mapper<LongWritable, Text, Text, IntWrita
 		ImageFeatures actImg = new ImageFeatures(line);
 		ImageFeatures wantedImg = new ImageFeatures(wantedImage);
 		double distance = getEuclidianDistance(wantedImg.getImage_features(), actImg.getImage_features());
-		context.write(new Text(actImg.getImage_title()), new IntWritable((int) distance));
+		context.write(new Text("distances"), new Text(actImg.getImage_title() + ";" + distance));
 	}
 	
 	public double getEuclidianDistance(double[] a, double[] b) {
