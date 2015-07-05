@@ -25,33 +25,29 @@ import featureExtract.FeatureExtract;
 public class ImageSearch {
 
 	public static void main(String[] args) throws Exception {
-		String projectPath = "/home/daniel/Distributed_Systems_Final_Project/";
-		String inputPath = projectPath + "ImageSearch_Hadoop/input/";
-		String imageFolder = projectPath + "Aloi Images/png4/";
+		String imageFolder = "/home/daniel/Distributed_Systems_Final_Project/Aloi Images/png4/";
+		String wantedImage = "/home/daniel/Distributed_Systems_Final_Project/Aloi Images/png4/251/251_c.png";
 		String input = "";
 		String output = "";
-		String imageFeatureFile = inputPath + "imageFeatures.txt";
 		if (args.length != 2) {
-			//System.err.println("Usage: FeatureExtract <input path> <output path>");
-			//System.exit(-1);
-			input = imageFolder + "251/251_c.png";
-			output = projectPath + "ImageSearch_Hadoop/output/";
+			input = "/home/daniel/Distributed_Systems_Final_Project/ImageSearch_Hadoop/input/";
+			output = "/home/daniel/Distributed_Systems_Final_Project/ImageSearch_Hadoop/output/";
 		} else {
 			input = args[0];
 			output = args[1];
 		}
 		
 		//create imageFeatures.txt if not already exists
-		File txtfile = new File(imageFeatureFile);
+		File txtfile = new File(input + "imageFeatures.txt");
 		if(!txtfile.exists()) {
 			File f = new File(imageFolder);
 			Set<String> fileInfos = FeatureExtract.getFilesInFolder(f);
-			FeatureExtract.writeFile(imageFeatureFile, fileInfos);
+			FeatureExtract.writeFile(input + "imageFeatures.txt", fileInfos);
 		}
 		
 		//create file for input image
-		String inputtxtFile = inputPath + "wantedImage.txt";
-		File inputFile = new File(input);
+		String inputtxtFile = input + "wantedImage.txt";
+		File inputFile = new File(wantedImage);
 		 BufferedImage img = null;
          double[] features = null;
 			try {
@@ -69,7 +65,7 @@ public class ImageSearch {
 		job.setJarByClass(ImageSearch.class);
 		job.setJobName("ImageSearch");
 
-		FileInputFormat.addInputPath(job, new Path(imageFeatureFile));
+		FileInputFormat.addInputPath(job, new Path(input + "imageFeatures.txt"));
 		FileOutputFormat.setOutputPath(job, new Path(output));
 
 		job.setMapperClass(ImageSearchMapper.class);
