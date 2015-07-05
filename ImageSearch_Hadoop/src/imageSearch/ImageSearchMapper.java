@@ -13,8 +13,9 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 public class ImageSearchMapper extends Mapper<LongWritable, Text, Text, Text> {
 
-	private static final int MISSING = 9999;
-	private static final String PATH = "/home/daniel/Distributed_Systems_Final_Project/ImageSearch_Hadoop/input/wantedImage.txt";
+//	private static final String PATH = "/home/daniel/Distributed_Systems_Final_Project/ImageSearch_Hadoop/input/wantedImage.txt";
+//	private static final String PATH = "/home/julian/Desktop/Distributed_Systems_Final_Project/ImageSearch_Hadoop/input/wantedImage.txt";
+	private static final String PATH = "/input/wantedImage.txt";
 
 	@Override
 	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
