@@ -27,41 +27,6 @@ import net.semanticmetadata.lire.imageanalysis.CEDD;
  */
 public class FeatureExtract {
 
-	public static void main(String[] args) throws Exception {
-		String input = "";
-		String output = "";
-		String imageFeatureFile = "/home/daniel/Distributed_Systems_Final_Project/ImageSearch_Hadoop/input/imageFeatures.txt";
-		if (args.length != 2) {
-			//System.err.println("Usage: FeatureExtract <input path> <output path>");
-			//System.exit(-1);
-			input = "/home/daniel/Distributed_Systems_Final_Project/Aloi Images/png4/";
-			output = "/home/daniel/Distributed_Systems_Final_Project/ImageSearch_Hadoop/output/";
-		} else {
-			input = args[0];
-			output = args[1];
-		}
-		File txtfile = new File(imageFeatureFile);
-		if(!txtfile.exists()) {
-			File f = new File(input);
-			Set<String> fileInfos = getFilesInFolder(f);
-			writeFile(imageFeatureFile, fileInfos);
-		}
-		/*Job job = new Job();
-		job.setJarByClass(FeatureExtract.class);
-		job.setJobName("FeatureExtract");
-
-		FileInputFormat.addInputPath(job, new Path(input));
-		FileOutputFormat.setOutputPath(job, new Path(output));
-
-		job.setMapperClass(FeatureExtractMapper.class);
-		job.setReducerClass(FeatureExtractReducer.class);
-
-		// TODO Those two have yet to be adjusted for our needs
-		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(IntWritable.class);
-
-		System.exit(job.waitForCompletion(true) ? 0 : 1);*/
-	}
 	
 	public static Set<String> getFilesInFolder(File folder) {
 	    Set<String> ret = new HashSet<String>();
@@ -78,13 +43,8 @@ public class FeatureExtract {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-	            String featurestring = "";
-	            for(int i = 0; i<features.length; i++) {
-	            	featurestring += features[i];
-	            	if(i < features.length -1)
-	            		featurestring += ";";
-	            }
-	            ret.add(fileEntry.getName() + ";" + featurestring);
+	           
+	            ret.add(getLine(fileEntry.getName(), features));
 	        }
 	    }
 		return ret;
@@ -95,6 +55,16 @@ public class FeatureExtract {
 		sch.extract(bimg);
 		double[] histogram = sch.getDoubleHistogram();
 		return histogram;
+	}
+	
+	public static String getLine(String fileName, double[] features) {
+		 String featurestring = "";
+         for(int i = 0; i<features.length; i++) {
+         	featurestring += features[i];
+         	if(i < features.length -1)
+         		featurestring += ";";
+         }
+         return fileName + ";" + featurestring;
 	}
 	
 	public static void writeFile(String fileName, Set<String>content) {
@@ -115,6 +85,10 @@ public class FeatureExtract {
 					e.printStackTrace();
 				}
 	        }
+	}
+	
+	public static void reduce(Set<String> values, String input) {
+		
 	}
 
 }
