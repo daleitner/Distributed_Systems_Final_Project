@@ -209,5 +209,6 @@
 	<classpathentry kind="lib" path="HadoopCustomLibrary/xz-1.0.jar"/>
 	<classpathentry kind="lib" path="HadoopCustomLibrary/zookeeper-3.4.6-tests.jar"/>
 	<classpathentry kind="lib" path="HadoopCustomLibrary/zookeeper-3.4.6.jar"/>
+	<classpathentry kind="lib" path="/home/daniel/Distributed_Systems_Final_Project/ImageSearch_Hadoop/LiRe/lire.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

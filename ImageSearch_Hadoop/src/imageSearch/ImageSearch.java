@@ -14,7 +14,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
  */
 public class ImageSearch {
 
-	public static void main(String[] args) throws Exception {
+	/*public static void main(String[] args) throws Exception {
 		if (args.length != 2) {
 			System.err.println("Usage: ImageSearch <input path> <output path>");
 			System.exit(-1);
@@ -35,6 +35,6 @@ public class ImageSearch {
 		job.setOutputValueClass(IntWritable.class);
 
 		System.exit(job.waitForCompletion(true) ? 0 : 1);
-	}
+	}*/
 
 }
