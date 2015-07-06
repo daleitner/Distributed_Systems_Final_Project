@@ -1,20 +1,17 @@
-java.io.IOException: Inconsistent checkpoint fields.
-LV = -63 namespaceID = 448724090 cTime = 0 ; clusterId = CID-77076766-a2ca-4ab9-a2be-ac17c3c12543 ; blockpoolId = BP-333793420-127.0.1.1-1436129619837.
-Expecting respectively: -63; 1557565692; 0; CID-4c9225ce-490f-4923-99d7-f50fc476293e; BP-1029650774-127.0.1.1-1436127848950.
-	at org.apache.hadoop.hdfs.server.namenode.CheckpointSignature.validateStorageInfo(CheckpointSignature.java:134)
-	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doCheckpoint(SecondaryNameNode.java:531)
-	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:395)
-	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
-	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
-	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
-	at java.lang.Thread.run(Thread.java:745)
-java.io.IOException: Inconsistent checkpoint fields.
-LV = -63 namespaceID = 448724090 cTime = 0 ; clusterId = CID-77076766-a2ca-4ab9-a2be-ac17c3c12543 ; blockpoolId = BP-333793420-127.0.1.1-1436129619837.
-Expecting respectively: -63; 1557565692; 0; CID-4c9225ce-490f-4923-99d7-f50fc476293e; BP-1029650774-127.0.1.1-1436127848950.
-	at org.apache.hadoop.hdfs.server.namenode.CheckpointSignature.validateStorageInfo(CheckpointSignature.java:134)
-	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doCheckpoint(SecondaryNameNode.java:531)
-	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:395)
-	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
-	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
-	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
-	at java.lang.Thread.run(Thread.java:745)
+ulimit -a for user julian
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 31829
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 31829
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
