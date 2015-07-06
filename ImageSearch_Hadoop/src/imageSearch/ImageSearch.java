@@ -22,20 +22,20 @@ public class ImageSearch {
 
 	public static void main(String[] args) throws Exception {
 //		String imageFolder = "/home/daniel/Distributed_Systems_Final_Project/Aloi_Images/png4/";
-//		String imageFolder = "/home/julian/Desktop/Distributed_Systems_Final_Project/Aloi_Images/png4/";
-		String imageFolder = "/png4/";
+		String imageFolder = "/home/julian/Desktop/Distributed_Systems_Final_Project/Aloi_Images/png4/";
+//		String imageFolder = "/png4/";
 //		String wantedImage = "/home/daniel/Distributed_Systems_Final_Project/Aloi_Images/png4/251/251_c.png";
-//		String wantedImage = "/home/julian/Desktop/Distributed_Systems_Final_Project/Aloi_Images/png4/251/251_c.png";
-		String wantedImage = "/png4/251/251_c.png";
+		String wantedImage = "/home/julian/Desktop/Distributed_Systems_Final_Project/Aloi_Images/png4/251/251_c.png";
+//		String wantedImage = "/png4/251/251_c.png";
 		String input = "";
 		String output = "";
 		if (args.length != 2) {
 //			input = "/home/daniel/Distributed_Systems_Final_Project/ImageSearch_Hadoop/input/";
-//			input = "/home/julian/Desktop/Distributed_Systems_Final_Project/ImageSearch_Hadoop/input/";
-			input = "/input/";
+			input = "/home/julian/Desktop/Distributed_Systems_Final_Project/ImageSearch_Hadoop/input/";
+//			input = "/";
 //			output = "/home/daniel/Distributed_Systems_Final_Project/ImageSearch_Hadoop/output/";
-//			output = "/home/julian/Desktop/Distributed_Systems_Final_Project/ImageSearch_Hadoop/output/";
-			output = "/output/";
+			output = "/home/julian/Desktop/Distributed_Systems_Final_Project/ImageSearch_Hadoop/output/";
+//			output = "/output/";
 		} else {
 			input = args[0];
 			output = args[1];
