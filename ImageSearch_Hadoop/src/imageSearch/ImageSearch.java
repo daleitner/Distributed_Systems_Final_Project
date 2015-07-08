@@ -21,37 +21,30 @@ import featureExtract.FeatureExtract;
 public class ImageSearch {
 
 	public static void main(String[] args) throws Exception {
-//		String imageFolder = "/home/daniel/Distributed_Systems_Final_Project/Aloi_Images/png4/";
-		String imageFolder = "/home/julian/Desktop/Distributed_Systems_Final_Project/Aloi_Images/png4/";
-//		String imageFolder = "/png4/";
-//		String wantedImage = "/home/daniel/Distributed_Systems_Final_Project/Aloi_Images/png4/251/251_c.png";
-		String wantedImage = "/home/julian/Desktop/Distributed_Systems_Final_Project/Aloi_Images/png4/251/251_c.png";
-//		String wantedImage = "/png4/251/251_c.png";
+		String imageFolder = "../Images/";
+		String featureFolder = "./";
 		String input = "";
 		String output = "";
+		
 		if (args.length != 2) {
-//			input = "/home/daniel/Distributed_Systems_Final_Project/ImageSearch_Hadoop/input/";
-			input = "/home/julian/Desktop/Distributed_Systems_Final_Project/ImageSearch_Hadoop/input/";
-//			input = "/";
-//			output = "/home/daniel/Distributed_Systems_Final_Project/ImageSearch_Hadoop/output/";
-			output = "/home/julian/Desktop/Distributed_Systems_Final_Project/ImageSearch_Hadoop/output/";
-//			output = "/output/";
+			System.err.println("Usage: ImageSearch <input path> <output path>");
+			System.exit(-1);
 		} else {
 			input = args[0];
 			output = args[1];
 		}
 		
 		//create imageFeatures.txt if not already exists
-		File txtfile = new File(input + "imageFeatures.txt");
+		File txtfile = new File(featureFolder + "imageFeatures.txt");
 		if(!txtfile.exists()) {
 			File f = new File(imageFolder);
 			Set<String> fileInfos = FeatureExtract.getFilesInFolder(f);
-			FeatureExtract.writeFile(input + "imageFeatures.txt", fileInfos);
+			FeatureExtract.writeFile(featureFolder + "imageFeatures.txt", fileInfos);
 		}
 		
 		//create file for input image
-		String inputtxtFile = input + "wantedImage.txt";
-		File inputFile = new File(wantedImage);
+		String inputtxtFile = featureFolder + "wantedImage.txt";
+		File inputFile = new File(input);
 		 BufferedImage img = null;
          double[] features = null;
 			try {
@@ -69,7 +62,7 @@ public class ImageSearch {
 		job.setJarByClass(ImageSearch.class);
 		job.setJobName("ImageSearch");
 
-		FileInputFormat.addInputPath(job, new Path(input + "imageFeatures.txt"));
+		FileInputFormat.addInputPath(job, new Path(featureFolder + "imageFeatures.txt"));
 		FileOutputFormat.setOutputPath(job, new Path(output));
 
 		job.setMapperClass(ImageSearchMapper.class);
